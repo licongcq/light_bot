@@ -1,0 +1,21 @@
+[Unit]
+Description=Voice-controlled Light Bot
+After=network.target sound.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__PROJECT_DIR__
+ExecStart=__PROJECT_DIR__/.venv/bin/python light_bot.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=true
+PrivateTmp=true
+SupplementaryGroups=audio
+
+[Install]
+WantedBy=multi-user.target

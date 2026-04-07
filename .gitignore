@@ -1,0 +1,17 @@
+config.yaml
+models/
+.venv/
+__pycache__/
+*.pyc
+light-bot.service
+*.log
+.env
+.env.*
+.vscode/
+.idea/
+.DS_Store
+*.egg-info/
+build/
+dist/
+.claude/
+PLAN.md

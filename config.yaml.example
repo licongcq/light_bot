@@ -1,0 +1,26 @@
+# Command keywords
+command_on: "开灯"
+command_off: "关灯"
+
+# Light API - PUT requests with {"on": true/false} payload
+# %s in the URL is replaced with each light ID
+light_base_url: "https://<bridge-ip>/api/<your-hue-api-token>/lights/%s/state"
+light_ids:
+  - "11"
+  - "12"
+
+# Vosk model path (relative to project root or absolute)
+model_path: "models/vosk-model-small-cn-0.22"
+
+# Audio settings
+sample_rate: 16000        # Vosk always needs 16000 Hz
+device_sample_rate: 48000 # native rate of your microphone
+device_name: "USB"        # match mic by name substring (case-insensitive); more reliable than index
+device: 0                 # fallback device index if device_name not found
+block_duration_ms: 500
+
+# Cooldown after executing a command (seconds)
+cooldown_sec: 1
+
+# Logging
+log_level: "INFO"
