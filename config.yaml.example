@@ -19,6 +19,10 @@ device_name: "USB"        # match mic by name substring (case-insensitive); more
 device: 0                 # fallback device index if device_name not found
 block_duration_ms: 500
 
+# Minimum average word confidence to accept a command (0.0–1.0)
+# Lower = more sensitive, higher = fewer false positives
+min_confidence: 0.7
+
 # Cooldown after executing a command (seconds)
 cooldown_sec: 1
 

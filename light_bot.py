@@ -41,8 +41,10 @@ def main():
     if not Path(model_path).is_absolute():
         model_path = str(Path(__file__).parent / model_path)
 
+    min_confidence = config.get("min_confidence", 0.5)
+
     grammar = [cmd_on, cmd_off, "[unk]"]
-    recognizer = VoskRecognizer(model_path, sample_rate, grammar)
+    recognizer = VoskRecognizer(model_path, sample_rate, grammar, min_confidence)
     lights = LightController(config["light_base_url"], config["light_ids"])
 
     log.info("Light bot started. On: '%s', Off: '%s'", cmd_on, cmd_off)
